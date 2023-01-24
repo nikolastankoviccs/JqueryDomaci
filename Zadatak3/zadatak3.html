@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-danger-subtle">
+    <h1
+      class="text-light position-absolute"
+      style="margin-top: 100px; margin-left: 45%"
+    >
+      Tabs
+    </h1>
+    <button id="one" onclick="changeText1()">One</button>
+    <button id="two" onclick="changeText2()">Two</button>
+    <button id="three" onclick="changeText3()">Three</button>
+    <div id="praznaKocka" class="bg-white"></div>
+
+    <script>
+      function changeText1() {
+        $("#praznaKocka").text("Lorem1");
+      }
+      function changeText2() {
+        $("#praznaKocka").text("Lorem2");
+      }
+      function changeText3() {
+        $("#praznaKocka").text("Lorem3");
+      }
+    </script>
+  </body>
+</html>
