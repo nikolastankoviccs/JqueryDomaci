@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery
+.min.js"></script>
+    <style type="text/css">
+      .yellow {
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        var theader = $("#theader").css("background-color", "yellow");
+        var borderlines = $("td,th").css("border", "1px solid grey");
+        $("#tabela").css("border-collapse", "collapse");
+        $("#poslednji")
+          .css("border-right", "0px")
+          .css("border-top", "0px")
+          .css("background-color", "white");
+        $("#divtabela")
+          .css("padding-left", "200px")
+          .css("padding-right", "200px")
+          .css("padding-top", "100px");
+        $("#submit").on("click", function (event) {
+          var firstName = $.trim($("#firstName").val());
+          var lastName = $.trim($("#lastName").val());
+          var datumRodjenja = $.trim($("#datumRodjenja").val());
+          var email = $.trim($("#email").val());
+
+          var newRow = $(
+            "<tr><td></td><td></td><td></td><td></td><td></td></tr>"
+          );
+          var cols = newRow.children();
+          cols.eq(0).text(numRows + 1);
+          cols.eq(1).text(firstName);
+          cols.eq(2).text(lastName);
+          cols.eq(3).text(datumRodjenja);
+          cols.eq(4).text(email);
+          newRow.appendTo("#tableBody");
+        });
+        $(document).ready(function () {
+          $("#dodajNovog").click(function () {
+            $("#forma").toggle("slow", function () {
+              $(".log").text("Toggle Transition Complete");
+            });
+          });
+        });
+      });
+    </script>
+    <div style="text-align: center" id="divtabela">
+      <table id="tabela" class="table">
+        <tr id="theader">
+          <th id="Ime">Ime</th>
+          <th id="Prezime">Prezime</th>
+          <th id="Datum">Datum rođenja</th>
+          <th id="Email">Email</th>
+          <th id="poslednji"></th>
+        </tr>
+        <tr>
+          <td>Milan</td>
+          <td>Krunic</td>
+          <td>01/01/1999</td>
+          <td>milanche@gmail.com</td>
+          <td><a href="">x</a></td>
+        </tr>
+        <tr>
+          <td>Nikola</td>
+          <td>Vekic</td>
+          <td>25/04/1997</td>
+          <td>vekavekica@gmail.com</td>
+          <td><a href="">x</a></td>
+        </tr>
+      </table>
+    </div>
+    <br />
+
+    <button
+      type="button"
+      onclick="toggleForm()"
+      id="dodajNovog"
+      style="margin-left: 200px"
+      class="btn btn-secondary"
+    >
+      Dodaj novog usera
+    </button>
+
+    <div
+      id="forma"
+      style="
+        margin-left: 200px;
+        padding-right: 40px;
+        background-color: aquamarine;
+        width: 200px;
+      "
+    >
+      <form action="kontakt.html" method="post" class="form">
+        <br />
+        <label for="Name">Ime:</label>
+        <br />
+
+        <input type="text" id="firstName" name="firstname" required />
+        <br />
+        <br />
+        <label for="LastName">Prezime:</label>
+        <br />
+
+        <input type="text" id="lastName" name="lastname" required />
+        <br />
+        <br />
+        <label for="DatumRodjenja">Datum rodjenja</label>
+        <br />
+        <input type="date" id="datumRodjenja" name="datumRodjenja" />
+        <br />
+        <br />
+        <label for="Email">Email:</label>
+        <br />
+
+        <input type="email" id="email" name="email" required="" />
+        <br /><br />
+
+        <input
+          type="submit"
+          name="submit"
+          id="submit"
+          onclick=""
+          button
+          class="btn btn-secondary"
+        />
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
